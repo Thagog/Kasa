@@ -1,0 +1,110 @@
+﻿<Window
+    x:Class="Kasa.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Kasa"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="731"
+    Height="459"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <Style x:Key="PredmetMenuItem" TargetType="{x:Type Button}">
+
+            <Setter Property="Margin" Value="0,10,0,0" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="FontFamily" Value="Bahnschrift" />
+            <Setter Property="Width" Value="148" />
+            <Setter Property="FontSize" Value="19" />
+            <EventSetter Event="Click" Handler="ShopItem_Click" />
+        </Style>
+    </Window.Resources>
+    <Grid Margin="0,0,-161,-237">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.RowSpan="4" Grid.Column="2">
+
+            <Button Content="Jablko" Style="{StaticResource PredmetMenuItem}" />
+            <Button Content="Čokoláda" Style="{StaticResource PredmetMenuItem}" />
+            <Button Content="Hovězí" Style="{StaticResource PredmetMenuItem}" />
+            <Button Content="Notebook" Style="{StaticResource PredmetMenuItem}" />
+            <Button Content="Eso Piků" Style="{StaticResource PredmetMenuItem}" />
+            <Button Content="Boty" Style="{StaticResource PredmetMenuItem}" />
+            <Button Content="Káva" Style="{StaticResource PredmetMenuItem}" />
+            <Button Content="Kolo" Style="{StaticResource PredmetMenuItem}" />
+            <Button Content="Rubínový prsten" Style="{StaticResource PredmetMenuItem}" />
+            <Button Content="Německý slovník" Style="{StaticResource PredmetMenuItem}" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="0" Margin="0,0,0,59" Grid.RowSpan="2">
+            <TextBox
+                x:Name="KontentKosiku"
+                MaxHeight="75"
+                Margin="10,0,0,0"
+                FontSize="15"
+                ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                ScrollViewer.VerticalScrollBarVisibility="Visible" />
+
+        </StackPanel>
+        <Button
+            x:Name="Kašír"
+            Grid.Row="1"
+            Grid.Column="0"
+            Width="100"
+            Height="30"
+            Margin="54,0,67,35"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Bottom"
+            Background="MediumAquamarine"
+            Click="Kašír_Click"
+            Content="Kup"
+            FontFamily="Microsoft JhengHei" />
+
+        <StackPanel>
+
+            <Label
+                Name="KonkretniPredmet"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Content=""
+                FontFamily="Bahnschrift"
+                FontSize="23" />
+            <Label
+                Name="Cena"
+                HorizontalAlignment="Center"
+                Content=""
+                FontFamily="Bahnschrift"
+                FontSize="30" />
+            <Label
+                Name="Regal"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Content=""
+                FontFamily="Bahnschrift"
+                FontSize="20" />
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="0">
+            <TextBlock x:Name="Plejsholder"><Run Text="Cena všeho: " /><InlineUIContainer>
+                    <TextBlock
+                        x:Name="Total"
+                        Width="248"
+                        Text="" />
+                </InlineUIContainer></TextBlock>
+        </StackPanel>
+
+
+    </Grid>
+</Window>
